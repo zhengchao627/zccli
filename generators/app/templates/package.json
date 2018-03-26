@@ -1,5 +1,5 @@
 {
-  "name": "zcweb",
+  "name": "<%= packagename %>",
   "version": "1.0.0",
   "description": "脚手架练习编写",
   "main": "index.js",
