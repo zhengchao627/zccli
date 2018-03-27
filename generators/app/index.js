@@ -61,32 +61,22 @@ module.exports = class extends Generator {
             this.destinationPath(_path + '/src')
         );
         this.fs.copy(
-            this.templatePath('test'),
-            this.destinationPath(_path + '/test')
+            this.templatePath('tests'),
+            this.destinationPath(_path + '/tests')
         );
         this.fs.copy(
-            this.templatePath('web'),
-            this.destinationPath(_path + '/web')
-        );
-        this.fs.copy(
-            this.templatePath('chromedriver'),
-            this.destinationPath(_path + '/chromedriver')
+            this.templatePath('htmlAfterWebpackPlugin'),
+            this.destinationPath(_path + '/htmlAfterWebpackPlugin')
         );
         this.fs.copyTpl(
             this.templatePath('gulpfile.js'),
             this.destinationPath(_path + '/gulpfile.js')
         );
         this.fs.copyTpl(
-            this.templatePath('id_rsa.enc'),
-            this.destinationPath(_path + '/id_rsa.enc')
-        );
-        this.fs.copyTpl(
-            this.templatePath('karma.conf.js'),
-            this.destinationPath(_path + '/karma.conf.js')
-        );
-        this.fs.copyTpl(
             this.templatePath('package.json'),
-            this.destinationPath(_path + '/package.json'), { packagename: this.appname }
+            this.destinationPath(_path + '/package.json'), {
+                packagename: this.appname
+            }
         );
         this.fs.copyTpl(
             this.templatePath('README.md'),
@@ -95,10 +85,6 @@ module.exports = class extends Generator {
         this.fs.copyTpl(
             this.templatePath('webpack.config.js'),
             this.destinationPath(_path + '/webpack.config.js')
-        );
-        this.fs.copyTpl(
-            this.templatePath('yarn.lock'),
-            this.destinationPath(_path + '/yarn.lock')
         );
     }
     end() {
